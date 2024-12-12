@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: url("./content/gray.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 22px 940px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: orange;
+}
+
+.container {
+  display: flex;
+  height: 93vh;
+  position: relative;
+  margin-top: 62px; /* Відступ під навігацію */
+}
+
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 00px;
+  background-image: url("./content/012.jpg");
+  background-size: cover; /*Обрізання замість зменшення*/
+  background-position: center;
+  background-repeat: no-repeat;
+  order: 2;
+}
+
+.right-panel {
+  flex: 1;
+  order: 1;
+}
+
+.center-overlay {
+  position: absolute;
+  top: 27%;
+  left: 35%;
+  /* transform: translate(-50%, -50%); */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 25px 60px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: #303030;
+  line-height: 1.5;
+}
+
+.interior-text-span {
+  letter-spacing: 4px;
+}
+
+.center-overlay .subtitle {
+  font-size: 16px;
+  margin-top: 43px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: rgb(63, 63, 63);
+}
+
+/* Контейнер для всіх логотипів */
+.logo-container {
+  position: relative; /* Позиціонуємо відносно цього контейнера */
+  width: 0px; /* Ширина контейнера */
+  height: 100px; /* Висота контейнера */
+  margin-top: 290px;
+  margin-left: 40px;
+
+  position: absolute; /* Виймаємо контейнер із потоку документа */
+  top: 0; /* Або налаштуйте залежно від розташування */
+  left: 0;
+  z-index: -1; /* Поміщаємо контейнер на задній план */
+}
+
+/* Обгортка для кожного зображення */
+.logo-wrapper {
+  position: absolute; /* Абсолютне позиціонування для кожної обгортки */
+  top: 0; /* Всі логотипи починаються з верхнього краю */
+}
+
+/* Зображення */
+.logo {
+  width: 100%; /* Заповнює контейнер */
+}
+
+/* Специфічне позиціонування кожного логотипу */
+.n18 {
+  left: 75px; /* Початкова позиція для першого логотипу */
+  width: 100px;
+}
+
+.n19 {
+  left: 90px; /* Зміщуємо другий логотип */
+  top: 15px;
+  width: 65px;
+}
+
+.n20 {
+  left: 140px; /* Зміщуємо третій логотип */
+  top: 50px;
+  width: 6px;
+}
+
+.n17 {
+  left: 30px; /* Зміщуємо четвертий логотип */
+  top: 80px;
+  width: 200px;
+}
+
+.mu {
+  width: 150px;
+}
+
+.mu img {
+  width: 800px;
+  height: 800px;
+}
+
+.design-block {
+  position: relative;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.design-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 100%;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.text-block {
+  width: 37%;
+  height: 25.5%;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-left: 117px;
+  margin-right: 117px;
+  box-sizing: border-box;
+  /* text-align: center; */
+}
+
+.text-1 {
+  margin-bottom: 335px;
+  padding-left: 410px;
+}
+
+.text-2 {
+  margin-bottom: 335px;
+  padding-right: 360px;
+  padding-left: 10px;
+}
+
+.text-3 {
+  padding-left: 410px;
+}
+
+.text-4 {
+  padding-right: 360px;
+  padding-left: 10px;
+}
+
+.text-block h2 {
+  padding-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: 400;
+  color: #303030;
+  line-height: 1.2;
+}
+
+.text-block span {
+  color: #ffffff;
+}
+
+.text-block p {
+  padding-top: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.3;
+}
+
+.orange-line {
+  width: 70px; /* Довжина лінії */
+  height: 2px; /* Товщина лінії */
+  background-color: #f79e1b; /* Помаранчевий колір лінії */
+  margin: 5px 0; /* Відступи зверху і знизу */
+}
+
+.section-2 {
+    margin-top: 150px; /* Проміжок у 20px між секціями */
+}
+
+@media screen and (max-width: 768px) {
+  .center-overlay {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+  }
+
+  .center-overlay .subtitle {
+    font-size: 1rem;
+  }
+}
+
