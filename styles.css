@@ -87,7 +87,7 @@ header {
   .nav-links {
     position: fixed;
     right: -100%;
-    top: 44px;
+    top: 100px;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.9);
     width: 100%;
@@ -276,13 +276,13 @@ header {
 }
 
 .mu img {
-  width: 800px;
-  height: 800px;
+  width: 900px;
+  height: 900px;
 }
 
 .design-block {
   position: relative;
-  height: 75vh;
+  height: 80vh;
   overflow: hidden;
 }
 
@@ -302,34 +302,53 @@ header {
   justify-content: center;
 }
 
+.text-block-overlay-down {
+  display: flex;
+  justify-content: center;
+  margin-top: 554px;
+}
+
 .text-overlay {
   display: flex;
   position: absolute;
   z-index: 2;
-  gap: 20vw;
+  gap: 15vw;
   width: 75%;
   
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1700px) {
   .text-overlay {
       width: 100%;
   }
 }
 
-.text-block {
+.text-block-r {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   width: 75%;
   background-color: rgba(255, 255, 255, 0.4);
-  text-align: center;
+  text-align: left;
   height: 175px;
   flex-direction: column;
-  padding-left: 15%;
+  padding-left: 19%;
 }
 
-.text-block h2 {
+.text-block-l {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  width: 75%;
+  background-color: rgba(255, 255, 255, 0.4);
+  text-align: left;
+  height: 175px;
+  flex-direction: column;
+  padding-left: 2%;
+  padding-right: 18%;
+}
+
+.text-block-r h2, .text-block-l h2 {
   padding-top: 10px;
   font-family: "Montserrat", sans-serif;
   margin-bottom: 10px;
@@ -339,11 +358,11 @@ header {
   line-height: 1.2;
 }
 
-.text-block span {
+.text-block-r span, .text-block-l span {
   color: #ffffff;
 }
 
-.text-block p {
+.text-block-r p, .text-block-l p {
   padding-top: 5px;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;

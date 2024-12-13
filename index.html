@@ -88,7 +88,7 @@
         <img src="./content/mu.jpg" alt="Design Image" class="design-image" />
         <div class="text-block-overlay">
           <div class="text-overlay">
-            <div class="text-block">
+            <div class="text-block-r">
               <h2>Більше <span>20 років</span> досвіду</h2>
               <div class="orange-line"></div>
               <p>
@@ -96,13 +96,31 @@
                 призначення
               </p>
             </div>
-            <div class="text-block">
+            <div class="text-block-l">
               <h2>Більше <span>400 проектів</span> виконаних</h2>
               <div class="orange-line"></div>
               <p>Проекти в Україні і закордоном</p>
             </div>
           </div>
-          <!-- <div class="text-block">
+          <div class="text-block-overlay-down">
+            <div class="text-overlay">
+              <div class="text-block-r">
+                <h2>Авторський <span>супровід </span>об'єкту</h2>
+                <div class="orange-line"></div>
+                <p>
+                  Підбір оздоблювальних матеріалів Нагляд усіх етапів ремонту
+                </p>
+              </div>
+              <div class="text-block-l">
+                <h2>Додатковий <span>бонус </span>до дизайн проєкту</h2>
+                <div class="orange-line"></div>
+                <p>
+                  Консультація щодо вибору квартири при купівлі нового житла
+                </p>
+              </div>
+            </div>
+
+            <!-- <div class="text-block">
             <h2>Авторський <span>супровід</span> об'єкту</h2>
             <div class="orange-line"></div>
             <p>Підбір оздоблювальних матеріалів. Нагляд усіх етапів ремонту</p>
@@ -112,6 +130,7 @@
             <div class="orange-line"></div>
             <p>Консультація щодо вибору квартири при купівлі нового житла</p>
           </div> -->
+          </div>
         </div>
       </div>
     </section>
@@ -247,5 +266,27 @@
           document.querySelector(".nav-links").classList.toggle("active");
         });
     </script>
+    <!-- <script>
+      window.addEventListener("scroll", function () {
+        const fadeElement = document.querySelector(".fade-element");
+        const scrollPosition = window.scrollY; // поточна позиція скролу
+        const windowHeight = window.innerHeight; // висота вікна
+
+        // Обчислюємо відсоток, на скільки елемент має зникнути
+        const fadeStart = 200; // Початок скролу для зникнення
+        const fadeEnd = 600; // Кінець скролу для зникнення
+
+        // Якщо прокрутили більше, ніж fadeStart, і менше, ніж fadeEnd, зменшуємо прозорість
+        if (scrollPosition > fadeStart && scrollPosition < fadeEnd) {
+          const opacity =
+            1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+          fadeElement.style.opacity = opacity;
+        } else if (scrollPosition >= fadeEnd) {
+          fadeElement.style.opacity = 0;
+        } else {
+          fadeElement.style.opacity = 1;
+        }
+      });
+    </script> -->
   </body>
 </html>
