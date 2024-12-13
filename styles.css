@@ -39,7 +39,7 @@ header {
   display: flex;
   list-style: none;
   margin-left: auto;
-  transform: translateX(20vw);
+  transform: translateX(18vw);
 }
 
 .nav-links li {
@@ -80,6 +80,10 @@ header {
 }
 
 @media screen and (max-width: 768px) {
+  header {
+    padding: 50px 0px;
+  }
+
   .nav-links {
     position: fixed;
     right: -100%;
@@ -119,45 +123,55 @@ header {
   }
 }
 
+/* Section 1 */
+:root {
+  --margin-top-navigation: 62px;
+  --overlay-text-color: #303030;
+  --subtitle-text-color: rgb(63, 63, 63);
+}
+
+.section-1 {
+  width: 100%;
+}
+
 .container {
   display: flex;
   height: 93vh;
+  max-height: 900px;
   position: relative;
-  margin-top: 62px; /* Відступ під навігацію */
+  margin-top: var(--margin-top-navigation);
+  flex-wrap: wrap;
+}
+
+.left-panel,
+.right-panel {
+  flex: 1 1 50%;
+  min-width: 300px;
 }
 
 .left-panel {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 00px;
   background-image: url("./content/012.jpg");
-  background-size: cover; /*Обрізання замість зменшення*/
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  order: 2;
-}
-
-.right-panel {
-  flex: 1;
-  order: 1;
 }
 
 .center-overlay {
   position: absolute;
-  top: 27%;
-  left: 35%;
-  /* transform: translate(-50%, -50%); */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.9);
   padding: 25px 60px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  font-size: 40px;
+  font-size: clamp(24px, 4vw, 40px);
   font-weight: 400;
-  color: #303030;
+  color: var(--overlay-text-color);
   line-height: 1.5;
+  width: max(300px, 50%);
+  max-width: 600px;
+  box-sizing: border-box;
 }
 
 .interior-text-span {
@@ -169,58 +183,94 @@ header {
   margin-top: 43px;
   margin-bottom: 10px;
   font-weight: 400;
-  color: rgb(63, 63, 63);
+  color: var(--subtitle-text-color);
 }
 
-/* Контейнер для всіх логотипів */
 .logo-container {
-  position: relative; /* Позиціонуємо відносно цього контейнера */
-  width: 0px; /* Ширина контейнера */
-  height: 100px; /* Висота контейнера */
-  margin-top: 290px;
-  margin-left: 40px;
-
-  position: absolute; /* Виймаємо контейнер із потоку документа */
-  top: 0; /* Або налаштуйте залежно від розташування */
+  position: absolute;
+  top: 0;
   left: 0;
-  z-index: -1; /* Поміщаємо контейнер на задній план */
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
 }
 
-/* Обгортка для кожного зображення */
 .logo-wrapper {
-  position: absolute; /* Абсолютне позиціонування для кожної обгортки */
-  top: 0; /* Всі логотипи починаються з верхнього краю */
+  position: absolute;
+  margin-top: 292px;
+  margin-left: 35px;
 }
 
-/* Зображення */
 .logo {
-  width: 100%; /* Заповнює контейнер */
+  width: 100%;
+  height: auto;
 }
 
-/* Специфічне позиціонування кожного логотипу */
+/* Existing .n* classes remain unchanged */
 .n18 {
-  left: 75px; /* Початкова позиція для першого логотипу */
+  left: 75px;
   width: 100px;
 }
 
 .n19 {
-  left: 90px; /* Зміщуємо другий логотип */
+  left: 90px;
   top: 15px;
   width: 65px;
 }
 
 .n20 {
-  left: 140px; /* Зміщуємо третій логотип */
+  left: 140px;
   top: 50px;
   width: 6px;
 }
 
 .n17 {
-  left: 30px; /* Зміщуємо четвертий логотип */
+  left: 30px;
   top: 80px;
   width: 200px;
 }
 
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-panel,
+  .right-panel {
+    flex: 1 1 100%;
+    min-height: 300px;
+  }
+
+  .logo-wrapper {
+    opacity: 0;
+  }
+
+  .center-overlay {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 90%;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  .center-overlay {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .center-overlay .subtitle {
+    margin-top: 43px;
+  }
+}
+
+/* Section 2 */
 .mu {
   width: 150px;
 }
@@ -247,47 +297,36 @@ header {
   object-fit: cover;
 }
 
-.text-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.text-block-overlay {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+}
+
+.text-overlay {
+  display: flex;
+  position: absolute;
   z-index: 2;
+  gap: 20vw;
+  width: 75%;
+  
+}
+
+@media screen and (max-width: 1600px) {
+  .text-overlay {
+      width: 100%;
+  }
 }
 
 .text-block {
-  width: 37%;
-  height: 25.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
   background-color: rgba(255, 255, 255, 0.4);
-  margin-left: 117px;
-  margin-right: 117px;
-  box-sizing: border-box;
-  /* text-align: center; */
-}
-
-.text-1 {
-  margin-bottom: 335px;
-  padding-left: 410px;
-}
-
-.text-2 {
-  margin-bottom: 335px;
-  padding-right: 360px;
-  padding-left: 10px;
-}
-
-.text-3 {
-  padding-left: 410px;
-}
-
-.text-4 {
-  padding-right: 360px;
-  padding-left: 10px;
+  text-align: center;
+  height: 175px;
+  flex-direction: column;
+  padding-left: 15%;
 }
 
 .text-block h2 {
@@ -321,8 +360,10 @@ header {
 
 .section-2 {
   margin-top: 150px; /* Проміжок у 20px між секціями */
+  margin-bottom: 150px;
 }
 
+/* Section 3 */
 .how-we-work {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -393,6 +434,7 @@ header {
   height: 50px;
 }
 
+/* Section 4 */
 .pricing-section {
   padding: 50px 0;
 }
@@ -454,6 +496,7 @@ header {
   color: #ff8400;
 }
 
+/* Section 5 */
 .question-block {
   padding: 50px;
   text-align: center;
