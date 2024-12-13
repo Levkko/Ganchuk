@@ -4,8 +4,17 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-font: "Roboto", sans-serif;
+  --secondary-font: "Montserrat", sans-serif;
+  --text-dark: #303030;
+  --text-light: #555;
+  --accent-color: #ff8400;
+  --background-overlay: rgba(255, 255, 255, 0.9);
+}
+
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--secondary-font);
   background-image: url("./content/gray.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -19,9 +28,9 @@ header {
   left: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.6);
-  padding: 22px 940px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 22px 0px;
   align-items: center;
   z-index: 1000;
 }
@@ -30,6 +39,7 @@ header {
   display: flex;
   list-style: none;
   margin-left: auto;
+  transform: translateX(20vw);
 }
 
 .nav-links li {
@@ -48,6 +58,65 @@ header {
 
 .nav-links li a:hover {
   color: orange;
+}
+
+/* Mobile Menu Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    right: -100%;
+    top: 44px;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    transform: translateX(0vw);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
 }
 
 .container {
@@ -372,7 +441,7 @@ header {
   font-weight: 400;
   color: #303030;
   line-height: 1.2;
-  list-style-type:disc;
+  list-style-type: disc;
   padding: 0;
   text-align: left;
 }
@@ -392,7 +461,7 @@ header {
 }
 
 .question-block h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 32px;
   font-weight: 400;
   color: #303030;
@@ -400,7 +469,7 @@ header {
 }
 
 .question-block p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   color: #555;
   margin-bottom: 30px;
@@ -410,7 +479,7 @@ header {
   display: inline-block;
   background-color: #ff8400;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
   text-decoration: none;
